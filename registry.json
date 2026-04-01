@@ -12,7 +12,8 @@
         "size": 4443,
         "aliases": ["react-app", "vite-react", "typescript-react"],
         "tags": ["react", "vite", "typescript", "frontend"],
-        "category": "frontend"
+        "category": "frontend",
+        "features": ["tailwind"],
       }
     ],
     "vue": [
@@ -48,11 +49,12 @@
     "tailwind": [
       {
         "name": "tailwind",
-        "version": "3.4.0",
+        "version": "1.0.0",
         "description": "Tailwind CSS v3.4 with PostCSS and Autoprefixer",
         "frameworks": ["react", "vue", "nextjs"],
-        "downloadUrl": "https://cdn.slyxup.online/features/tailwind-3.4.0.tar.gz",
-        "sha256": "TO_BE_GENERATED_WHEN_FEATURE_IS_CREATED",
+        "downloadUrl": "https://cdn.slyxup.online/features/tailwind-1.0.0.tar.gz",
+        "sha256": "6e2e97bd3b102e12be8e843ffd7be87a6cc493c0797d5f89c1d82a19a1df7510",
+        "size": 709,
         "aliases": ["tailwindcss", "tailwind-css"],
         "tags": ["tailwind", "css", "styling"],
         "category": "styling",
