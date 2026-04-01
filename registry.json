@@ -8,8 +8,8 @@
         "description": "React 18 + Vite + TypeScript starter template",
         "framework": "react",
         "downloadUrl": "https://slyxup-cdn-worker.slyxup.workers.dev/templates/react-1.0.0.tar.gz",
-        "sha256": "53e8a60c8922fc6c89bf64e0d7e81926515297609f008be72bedadbb2204e64a",
-        "size": 4443,
+        "sha256": "34e666551e195cd7f4bd3ed8a043e3d0c3be3b1ba06887fabb4657a70313bb08",
+        "size": 4460,
         "aliases": ["react-app", "vite-react", "typescript-react"],
         "tags": ["react", "vite", "typescript", "frontend"],
         "category": "frontend"
