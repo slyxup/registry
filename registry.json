@@ -7,40 +7,11 @@
         "version": "1.0.0",
         "description": "React 18 + Vite + TypeScript starter template",
         "framework": "react",
-        "downloadUrl": "https://cdn.slyxup.online/templates/react-1.0.0.tar.gz",
+        "downloadUrl": "https://slyxup-cdn-worker.slyxup.workers.dev/templates/react-1.0.0.tar.gz",
         "sha256": "53e8a60c8922fc6c89bf64e0d7e81926515297609f008be72bedadbb2204e64a",
         "size": 4443,
         "aliases": ["react-app", "vite-react", "typescript-react"],
         "tags": ["react", "vite", "typescript", "frontend"],
-        "category": "frontend",
-        "features": ["tailwind"],
-      }
-    ],
-    "vue": [
-      {
-        "name": "vue",
-        "version": "1.0.0",
-        "description": "Vue 3 + Vite + TypeScript starter template",
-        "framework": "vue",
-        "downloadUrl": "https://cdn.slyxup.online/templates/vue-1.0.0.tar.gz",
-        "sha256": "TO_BE_GENERATED_WHEN_TEMPLATE_IS_CREATED",
-        "size": 0,
-        "aliases": ["vue-app", "vite-vue", "vue-3"],
-        "tags": ["vue", "vite", "typescript", "frontend"],
-        "category": "frontend"
-      }
-    ],
-    "nextjs": [
-      {
-        "name": "nextjs",
-        "version": "1.0.0",
-        "description": "Next.js 14 + TypeScript starter template",
-        "framework": "nextjs",
-        "downloadUrl": "https://cdn.slyxup.online/templates/nextjs-1.0.0.tar.gz",
-        "sha256": "TO_BE_GENERATED_WHEN_TEMPLATE_IS_CREATED",
-        "size": 0,
-        "aliases": ["next-app", "next-14", "app-router"],
-        "tags": ["nextjs", "app-router", "typescript", "frontend"],
         "category": "frontend"
       }
     ]
@@ -52,7 +23,7 @@
         "version": "1.0.0",
         "description": "Tailwind CSS v3.4 with PostCSS and Autoprefixer",
         "frameworks": ["react", "vue", "nextjs"],
-        "downloadUrl": "https://cdn.slyxup.online/features/tailwind-1.0.0.tar.gz",
+        "downloadUrl": "https://slyxup-cdn-worker.slyxup.workers.dev/features/tailwind-1.0.0.tar.gz",
         "sha256": "6e2e97bd3b102e12be8e843ffd7be87a6cc493c0797d5f89c1d82a19a1df7510",
         "size": 709,
         "aliases": ["tailwindcss", "tailwind-css"],
@@ -62,44 +33,6 @@
           "tailwindcss@^3.4.0",
           "postcss@^8.4.33",
           "autoprefixer@^10.4.16"
-        ]
-      }
-    ],
-    "shadcn": [
-      {
-        "name": "shadcn",
-        "version": "1.0.0",
-        "description": "shadcn/ui component library with Radix UI",
-        "frameworks": ["react", "nextjs"],
-        "downloadUrl": "https://cdn.slyxup.online/features/shadcn-1.0.0.tar.gz",
-        "sha256": "TO_BE_GENERATED_WHEN_FEATURE_IS_CREATED",
-        "aliases": ["shadcn-ui", "shadcn-ui-kit"],
-        "tags": ["components", "radix", "shadcn"],
-        "category": "components",
-        "dependencies": [
-          "@radix-ui/react-slot@^1.0.2",
-          "class-variance-authority@^0.7.0",
-          "clsx@^2.1.0",
-          "tailwind-merge@^2.2.0"
-        ],
-        "peerDependencies": [
-          "tailwindcss@^3.4.0"
-        ]
-      }
-    ],
-    "lucide": [
-      {
-        "name": "lucide",
-        "version": "1.0.0",
-        "description": "Lucide React icon library",
-        "frameworks": ["react", "vue", "nextjs"],
-        "downloadUrl": "https://cdn.slyxup.online/features/lucide-1.0.0.tar.gz",
-        "sha256": "TO_BE_GENERATED_WHEN_FEATURE_IS_CREATED",
-        "aliases": ["lucide-icons", "lucide-react"],
-        "tags": ["icons", "lucide", "react"],
-        "category": "icons",
-        "dependencies": [
-          "lucide-react@^0.344.0"
         ]
       }
     ]
