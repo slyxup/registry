@@ -1,0 +1,23 @@
+{
+  "name": "@slyxup/registry",
+  "version": "1.0.0",
+  "description": "Official SlyxUp template and feature registry",
+  "main": "registry.json",
+  "type": "module",
+  "scripts": {
+    "validate": "node scripts/validate.js",
+    "build": "node scripts/build.js",
+    "test": "node scripts/test.js"
+  },
+  "keywords": [
+    "slyxup",
+    "registry",
+    "templates",
+    "features"
+  ],
+  "author": "SlyxUp Team",
+  "license": "MIT",
+  "devDependencies": {
+    "zod": "^3.22.4"
+  }
+}

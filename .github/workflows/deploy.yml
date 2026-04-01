@@ -1,0 +1,43 @@
+name: Deploy Registry
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+      
+      - name: Install dependencies
+        run: npm install
+      
+      - name: Validate registry
+        run: npm run validate
+      
+      - name: Build registry
+        run: npm run build
+
+  deploy-cloudflare:
+    needs: validate
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v4
+      
+      # Cloudflare Pages deployment
+      # Configure in Cloudflare dashboard:
+      # - Connect this repo
+      # - Build command: npm run build
+      # - Output directory: .
+      # - Custom domain: registry.slyxup.online
+      
+      - name: Deploy to Cloudflare Pages
+        run: echo "Deployed via Cloudflare Pages integration"
