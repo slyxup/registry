@@ -8,7 +8,8 @@
     "validate": "node scripts/validate.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
-    "test:local": "node scripts/test-local.js"
+    "test:local": "node scripts/test-local.js",
+    "upload:r2": "node scripts/upload-to-r2.js"
   },
   "keywords": [
     "slyxup",
