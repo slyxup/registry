@@ -24,7 +24,7 @@ const templatePath = path.join(
   'templates',
   'react',
   'v1.0.0',
-  'react-1.0.0.tar.gz'
+  'react.tar.gz'
 );
 
 let templateBuffer;
@@ -61,12 +61,12 @@ const server = createServer((req, res) => {
   }
 
   // Serve React template
-  if (req.url === '/templates/react-1.0.0.tar.gz') {
+  if (req.url === '/templates/react.tar.gz') {
     res.setHeader('Content-Type', 'application/gzip');
     res.setHeader('Content-Length', templateBuffer.length);
     res.writeHead(200);
     res.end(templateBuffer);
-    console.log('   ✓ Served react-1.0.0.tar.gz');
+    console.log('   ✓ Served react.tar.gz');
     return;
   }
 
@@ -80,7 +80,7 @@ const PORT = 3000;
 server.listen(PORT, () => {
   console.log(`\n✅ Local test server running!\n`);
   console.log(`   Registry: http://localhost:${PORT}/registry.json`);
-  console.log(`   Template: http://localhost:${PORT}/templates/react-1.0.0.tar.gz\n`);
+  console.log(`   Template: http://localhost:${PORT}/templates/react.tar.gz\n`);
   console.log('📝 Next steps:\n');
   console.log('   1. Keep this server running');
   console.log('   2. In another terminal, modify CLI to use local registry:');

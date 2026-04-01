@@ -98,7 +98,7 @@ The SlyxUp CLI fetches this file to get available templates and features.
   "version": "1.0.0",
   "description": "My awesome template",
   "framework": "my-framework",
-  "downloadUrl": "https://cdn.slyxup.online/templates/my-template-1.0.0.tar.gz",
+  "downloadUrl": "https://cdn.slyxup.online/templates/my-template.tar.gz",
   "sha256": "YOUR_GENERATED_HASH_HERE",
   "size": 123456
 }
@@ -122,7 +122,7 @@ The SlyxUp CLI fetches this file to get available templates and features.
   "version": "1.0.0",
   "description": "My awesome feature",
   "frameworks": ["react", "vue"],
-  "downloadUrl": "https://cdn.slyxup.online/features/my-feature-1.0.0.tar.gz",
+  "downloadUrl": "https://cdn.slyxup.online/features/my-feature.tar.gz",
   "sha256": "YOUR_GENERATED_HASH_HERE",
   "dependencies": ["package@^1.0.0"]
 }
