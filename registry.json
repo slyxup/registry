@@ -8,8 +8,11 @@
         "description": "React 18 + Vite + TypeScript starter template",
         "framework": "react",
         "downloadUrl": "https://cdn.slyxup.online/templates/react-1.0.0.tar.gz",
-        "sha256": "TO_BE_GENERATED_WHEN_TEMPLATE_IS_CREATED",
-        "size": 0
+        "sha256": "53e8a60c8922fc6c89bf64e0d7e81926515297609f008be72bedadbb2204e64a",
+        "size": 4443,
+        "aliases": ["react-app", "vite-react", "typescript-react"],
+        "tags": ["react", "vite", "typescript", "frontend"],
+        "category": "frontend"
       }
     ],
     "vue": [
@@ -20,7 +23,10 @@
         "framework": "vue",
         "downloadUrl": "https://cdn.slyxup.online/templates/vue-1.0.0.tar.gz",
         "sha256": "TO_BE_GENERATED_WHEN_TEMPLATE_IS_CREATED",
-        "size": 0
+        "size": 0,
+        "aliases": ["vue-app", "vite-vue", "vue-3"],
+        "tags": ["vue", "vite", "typescript", "frontend"],
+        "category": "frontend"
       }
     ],
     "nextjs": [
@@ -31,7 +37,10 @@
         "framework": "nextjs",
         "downloadUrl": "https://cdn.slyxup.online/templates/nextjs-1.0.0.tar.gz",
         "sha256": "TO_BE_GENERATED_WHEN_TEMPLATE_IS_CREATED",
-        "size": 0
+        "size": 0,
+        "aliases": ["next-app", "next-14", "app-router"],
+        "tags": ["nextjs", "app-router", "typescript", "frontend"],
+        "category": "frontend"
       }
     ]
   },
@@ -44,6 +53,9 @@
         "frameworks": ["react", "vue", "nextjs"],
         "downloadUrl": "https://cdn.slyxup.online/features/tailwind-3.4.0.tar.gz",
         "sha256": "TO_BE_GENERATED_WHEN_FEATURE_IS_CREATED",
+        "aliases": ["tailwindcss", "tailwind-css"],
+        "tags": ["tailwind", "css", "styling"],
+        "category": "styling",
         "dependencies": [
           "tailwindcss@^3.4.0",
           "postcss@^8.4.33",
@@ -59,6 +71,9 @@
         "frameworks": ["react", "nextjs"],
         "downloadUrl": "https://cdn.slyxup.online/features/shadcn-1.0.0.tar.gz",
         "sha256": "TO_BE_GENERATED_WHEN_FEATURE_IS_CREATED",
+        "aliases": ["shadcn-ui", "shadcn-ui-kit"],
+        "tags": ["components", "radix", "shadcn"],
+        "category": "components",
         "dependencies": [
           "@radix-ui/react-slot@^1.0.2",
           "class-variance-authority@^0.7.0",
@@ -78,6 +93,9 @@
         "frameworks": ["react", "vue", "nextjs"],
         "downloadUrl": "https://cdn.slyxup.online/features/lucide-1.0.0.tar.gz",
         "sha256": "TO_BE_GENERATED_WHEN_FEATURE_IS_CREATED",
+        "aliases": ["lucide-icons", "lucide-react"],
+        "tags": ["icons", "lucide", "react"],
+        "category": "icons",
         "dependencies": [
           "lucide-react@^0.344.0"
         ]
