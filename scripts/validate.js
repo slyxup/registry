@@ -35,8 +35,7 @@ console.log('🔍 Validating registry.json...\n');
 
 try {
   // Read registry file
-  const registryContent = readFileSync('./registry.json', 'utf-8');
-  
+  const registryContent = readFileSync('../registry.json', 'utf-8');  
   // Parse JSON
   let registryData;
   try {

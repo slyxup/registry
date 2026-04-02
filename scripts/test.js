@@ -5,8 +5,7 @@ import { createServer } from 'http';
 
 console.log('🧪 Starting registry test server...\n');
 
-const registryContent = readFileSync('./registry.json', 'utf-8');
-
+const registryContent = readFileSync('../registry.json', 'utf-8');
 const server = createServer((req, res) => {
   // Enable CORS
   res.setHeader('Access-Control-Allow-Origin', '*');

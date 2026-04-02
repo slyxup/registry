@@ -6,7 +6,7 @@ console.log('🔨 Building registry...\n');
 
 try {
   // Read and validate registry
-  const registryContent = readFileSync('./registry.json', 'utf-8');
+  const registryContent = readFileSync('../registry.json', 'utf-8');
   const registry = JSON.parse(registryContent);
 
   // Minify for production (optional)
