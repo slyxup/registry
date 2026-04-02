@@ -142,7 +142,7 @@ for (const templatePath of templates) {
     console.log(`📤 Uploading: ${filename}`);
     
     execSync(
-      `wrangler r2 object put ${BUCKET_NAME}/${r2Key} --file="${templatePath}"`,
+      `wrangler r2 object put ${BUCKET_NAME}/${r2Key} --file="${templatePath}" --remote`,
       { stdio: 'inherit' }
     );
     
