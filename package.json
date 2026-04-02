@@ -1,6 +1,6 @@
 {
   "name": "@slyxup/registry",
-  "version": "1.0.0",
+  "version": "2.0.3",
   "description": "Official SlyxUp template and feature registry",
   "main": "registry.json",
   "type": "module",
@@ -9,7 +9,10 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
     "test:local": "node scripts/test-local.js",
-    "upload:r2": "node scripts/upload-to-r2.js"
+    "upload:r2": "node scripts/upload-to-r2.js",
+    "deploy": "node scripts/deploy.js",
+    "deploy:local": "node scripts/deploy.js local",
+    "deploy:prod": "node scripts/deploy.js prod"
   },
   "keywords": [
     "slyxup",

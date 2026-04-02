@@ -1,4 +1,31 @@
+# Dependencies
 node_modules/
-*.log
+
+# Wrangler cache
+.wrangler/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
 .DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Lock files (keep one, ignore others)
+pnpm-lock.yaml
+yarn.lock
+bun.lockb
+
+# Minified output
 registry.min.json
+
+# Local registry (generated)
+local-registry.json
+
+# Temp
+.tmp/
+.cache/

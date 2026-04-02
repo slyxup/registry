@@ -5,6 +5,11 @@
  * 
  * Uploads all packaged templates to Cloudflare R2 bucket
  * Requires: wrangler CLI installed and authenticated
+ * 
+ * Usage:
+ *   node upload-to-r2.js        # Interactive mode
+ *   node upload-to-r2.js local  # Upload to local/dev bucket
+ *   node upload-to-r2.js prod    # Upload to production bucket
  */
 
 import { execSync } from 'child_process';
@@ -16,12 +21,64 @@ import { dirname } from 'path';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const BUCKET_NAME = 'slyxup-templates';
+const args = process.argv.slice(2);
+const env = args[0] || 'interactive';
+
+const ENVIRONMENTS = {
+  local: {
+    bucket: 'slyxup-templates-dev',
+    cdnUrl: 'https://cdn-dev.slyxup.online'
+  },
+  prod: {
+    bucket: 'slyxup-templates',
+    cdnUrl: 'https://cdn.slyxup.online'
+  }
+};
+
 const TEMPLATES_DIR = join(__dirname, '..', '..', 'templates');
 
 console.log('🚀 SlyxUp R2 Upload Script\n');
 
-// Check if wrangler is installed
+async function askEnvironment() {
+  return new Promise(async resolve => {
+    const readline = await import('readline');
+    const rl = readline.default.createInterface({
+      input: process.stdin,
+      output: process.stdout
+    });
+    
+    console.log('Select environment:');
+    console.log('  1. local  - Development bucket (slyxup-templates-dev)');
+    console.log('  2. prod   - Production bucket (slyxup-templates)\n');
+    
+    rl.question('Enter choice (1/2) or type "local"/"prod": ', answer => {
+      const input = answer.trim().toLowerCase();
+      if (input === '1' || input === 'local') {
+        resolve('local');
+      } else {
+        resolve('prod');
+      }
+      rl.close();
+    });
+  });
+}
+
+async function main() {
+  let selectedEnv = env;
+
+  if (env === 'interactive') {
+    selectedEnv = await askEnvironment();
+  }
+
+  const config = ENVIRONMENTS[selectedEnv];
+  const BUCKET_NAME = config.bucket;
+  const CDN_URL = config.cdnUrl;
+
+  console.log(`\n📍 Target: ${selectedEnv.toUpperCase()}`);
+  console.log(`   Bucket: ${BUCKET_NAME}`);
+  console.log(`   CDN: ${CDN_URL}\n`);
+
+  // Check if wrangler is installed
 try {
   execSync('wrangler --version', { stdio: 'ignore' });
 } catch (error) {
@@ -89,7 +146,7 @@ for (const templatePath of templates) {
       { stdio: 'inherit' }
     );
     
-    console.log(`   ✅ Success: https://cdn.slyxup.online/${r2Key}\n`);
+    console.log(`   ✅ Success: ${CDN_URL}/${r2Key}\n`);
     successCount++;
   } catch (error) {
     console.error(`   ❌ Failed to upload ${filename}\n`);
@@ -104,13 +161,19 @@ if (failCount > 0) {
 }
 console.log('─────────────────────────────────────────\n');
 
-if (successCount > 0) {
-  console.log('🎉 Upload complete!');
-  console.log('\n📝 Next steps:');
-  console.log('   1. Update registry/registry.json with CDN URLs');
-  console.log('   2. Push registry to GitHub');
-  console.log('   3. Cloudflare Pages will auto-deploy');
-  console.log('   4. Test: curl https://registry.slyxup.online/registry.json\n');
+  if (successCount > 0) {
+    console.log('🎉 Upload complete!');
+    console.log('\n📝 Next steps:');
+    console.log('   1. Update registry/registry.json with CDN URLs');
+    console.log('   2. Push registry to GitHub');
+    console.log('   3. Cloudflare Pages will auto-deploy');
+    console.log('   4. Test: curl https://registry.slyxup.online/registry.json\n');
+  }
+
+  process.exit(failCount > 0 ? 1 : 0);
 }
 
-process.exit(failCount > 0 ? 1 : 0);
+main().catch(err => {
+  console.error(err);
+  process.exit(1);
+});

@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "2.0.3",
   "templates": {
     "react": [
       {
@@ -10,10 +10,19 @@
         "frameworkVersion": "React 18",
         "status": "stable",
         "downloadUrl": "https://cdn.slyxup.online/templates/react.tar.gz",
-        "sha256": "34e666551e195cd7f4bd3ed8a043e3d0c3be3b1ba06887fabb4657a70313bb08",
-        "size": 4460,
-        "aliases": ["react-app", "vite-react", "typescript-react"],
-        "tags": ["react", "vite", "typescript", "frontend"],
+        "sha256": "1359a736bde7d1381ab218d07d5d5bf410955a0c35d931f492f3322497870366",
+        "size": 3748,
+        "aliases": [
+          "react-app",
+          "vite-react",
+          "typescript-react"
+        ],
+        "tags": [
+          "react",
+          "vite",
+          "typescript",
+          "frontend"
+        ],
         "category": "frontend"
       }
     ],
@@ -24,12 +33,20 @@
         "description": "Vue 3 + Vite + TypeScript starter template",
         "framework": "vue",
         "frameworkVersion": "Vue 3",
-        "status": "coming-soon",
+        "status": "stable",
         "downloadUrl": "https://cdn.slyxup.online/templates/vue.tar.gz",
-        "sha256": "placeholder0000000000000000000000000000000000000000000000000000",
-        "size": 0,
-        "aliases": ["vue-app", "vite-vue"],
-        "tags": ["vue", "vite", "typescript", "frontend"],
+        "sha256": "b4ae4e73bf66d9958e04ac584bdc87a8462348fa94efbf9e7ebf672289d31886",
+        "size": 1780,
+        "aliases": [
+          "vue-app",
+          "vite-vue"
+        ],
+        "tags": [
+          "vue",
+          "vite",
+          "typescript",
+          "frontend"
+        ],
         "category": "frontend"
       }
     ],
@@ -40,12 +57,20 @@
         "description": "Next.js 14 + TypeScript with App Router",
         "framework": "next",
         "frameworkVersion": "Next.js 14",
-        "status": "coming-soon",
+        "status": "stable",
         "downloadUrl": "https://cdn.slyxup.online/templates/next.tar.gz",
-        "sha256": "placeholder0000000000000000000000000000000000000000000000000000",
-        "size": 0,
-        "aliases": ["nextjs", "next-app"],
-        "tags": ["next", "react", "typescript", "ssr"],
+        "sha256": "893617cfc50e5abbb73ff59ffa9369ff0b63fdd53abf7776782f8f69c77d0a90",
+        "size": 1468,
+        "aliases": [
+          "nextjs",
+          "next-app"
+        ],
+        "tags": [
+          "next",
+          "react",
+          "typescript",
+          "ssr"
+        ],
         "category": "frontend"
       }
     ],
@@ -56,12 +81,20 @@
         "description": "Express.js + TypeScript API starter",
         "framework": "express",
         "frameworkVersion": "Express 4",
-        "status": "coming-soon",
+        "status": "stable",
         "downloadUrl": "https://cdn.slyxup.online/templates/express.tar.gz",
-        "sha256": "placeholder0000000000000000000000000000000000000000000000000000",
-        "size": 0,
-        "aliases": ["express-api", "node-api"],
-        "tags": ["express", "node", "api", "backend"],
+        "sha256": "20f838a4698559072a8054ef427e9c5a01b9f2e4bad514e6817f0b7c84cb58e7",
+        "size": 1203,
+        "aliases": [
+          "express-api",
+          "node-api"
+        ],
+        "tags": [
+          "express",
+          "node",
+          "api",
+          "backend"
+        ],
         "category": "backend"
       }
     ],
@@ -72,13 +105,145 @@
         "description": "Discord.js v14 bot starter template",
         "framework": "discord",
         "frameworkVersion": "Discord.js 14",
-        "status": "coming-soon",
+        "status": "stable",
         "downloadUrl": "https://cdn.slyxup.online/templates/discord.tar.gz",
-        "sha256": "placeholder0000000000000000000000000000000000000000000000000000",
-        "size": 0,
-        "aliases": ["discord-bot", "discordjs"],
-        "tags": ["discord", "bot", "typescript"],
+        "sha256": "0656c07006c9983a041362c9f8a9f292bcf475ba2fc1a59328bad675fcc38f50",
+        "size": 1307,
+        "aliases": [
+          "discord-bot",
+          "discordjs"
+        ],
+        "tags": [
+          "discord",
+          "bot",
+          "typescript"
+        ],
         "category": "bot"
+      }
+    ],
+    "fastify": [
+      {
+        "name": "fastify",
+        "description": "Fastify v4 + TypeScript - Fast and low overhead web framework",
+        "framework": "fastify",
+        "frameworkVersion": "Fastify 4",
+        "aliases": [
+          "fastify-api",
+          "fastify-server"
+        ],
+        "tags": [
+          "fastify",
+          "node",
+          "api",
+          "backend",
+          "fast"
+        ],
+        "category": "backend",
+        "version": "1.0.0",
+        "status": "stable",
+        "downloadUrl": "https://cdn.slyxup.online/templates/fastify.tar.gz",
+        "sha256": "596166e98ad019cae7197b4a65a8e126c743e8ab4895ee68c373d4118dbfe849",
+        "size": 1567
+      }
+    ],
+    "nestjs": [
+      {
+        "name": "nestjs",
+        "description": "NestJS v10 + TypeScript - Enterprise Node.js framework",
+        "framework": "nestjs",
+        "frameworkVersion": "NestJS 10",
+        "aliases": [
+          "nest",
+          "nest-api"
+        ],
+        "tags": [
+          "nestjs",
+          "node",
+          "api",
+          "backend",
+          "enterprise"
+        ],
+        "category": "backend",
+        "version": "1.0.0",
+        "status": "stable",
+        "downloadUrl": "https://cdn.slyxup.online/templates/nestjs.tar.gz",
+        "sha256": "8247eaea35574f045a757f4ade3ef81fb9c1864eeb77eb51f62e94ec646b7b2e",
+        "size": 1934
+      }
+    ],
+    "graphql": [
+      {
+        "name": "graphql",
+        "description": "GraphQL Server with Apollo Server v4 + TypeScript",
+        "framework": "graphql",
+        "frameworkVersion": "Apollo Server 4",
+        "aliases": [
+          "apollo",
+          "graphql-api",
+          "apollo-server"
+        ],
+        "tags": [
+          "graphql",
+          "apollo",
+          "api",
+          "backend"
+        ],
+        "category": "backend",
+        "version": "1.0.0",
+        "status": "stable",
+        "downloadUrl": "https://cdn.slyxup.online/templates/graphql.tar.gz",
+        "sha256": "fe3e09a94abcd23059292ec185c479304614616e0253e00acec11680aefd745f",
+        "size": 1748
+      }
+    ],
+    "hono": [
+      {
+        "name": "hono",
+        "description": "Hono v3 + TypeScript - Ultrafast edge runtime web framework",
+        "framework": "hono",
+        "frameworkVersion": "Hono 3",
+        "aliases": [
+          "hono-server",
+          "edge-server"
+        ],
+        "tags": [
+          "hono",
+          "edge",
+          "api",
+          "backend",
+          "cloudflare"
+        ],
+        "category": "backend",
+        "version": "1.0.0",
+        "status": "stable",
+        "downloadUrl": "https://cdn.slyxup.online/templates/hono.tar.gz",
+        "sha256": "1a0e152f237235c8abee05c95eb004ca671ad261896c1f7ce9e1e5a98108f780",
+        "size": 1379
+      }
+    ],
+    "bun-server": [
+      {
+        "name": "bun-server",
+        "description": "Bun Runtime HTTP Server - Native TypeScript runtime",
+        "framework": "bun",
+        "frameworkVersion": "Bun 1.x",
+        "aliases": [
+          "bun",
+          "bun-api"
+        ],
+        "tags": [
+          "bun",
+          "runtime",
+          "api",
+          "backend",
+          "fast"
+        ],
+        "category": "backend",
+        "version": "1.0.0",
+        "status": "stable",
+        "downloadUrl": "https://cdn.slyxup.online/templates/bun-server.tar.gz",
+        "sha256": "728f7c8ef8e8803ee86120e35bc98ca303a1ca71c07acb27e0c8e644f73ed435",
+        "size": 1289
       }
     ]
   },
@@ -88,14 +253,30 @@
         "name": "tailwind",
         "version": "1.0.0",
         "description": "Tailwind CSS v3.4 with PostCSS and Autoprefixer",
-        "frameworks": ["react", "vue", "next", "nuxt", "svelte", "astro", "solid"],
+        "frameworks": [
+          "react",
+          "vue",
+          "next",
+          "nuxt",
+          "svelte",
+          "astro",
+          "solid"
+        ],
         "frameworkVersion": "Tailwind 3.4",
         "status": "stable",
         "downloadUrl": "https://cdn.slyxup.online/features/tailwind.tar.gz",
-        "sha256": "6e2e97bd3b102e12be8e843ffd7be87a6cc493c0797d5f89c1d82a19a1df7510",
-        "size": 709,
-        "aliases": ["tailwindcss", "tailwind-css"],
-        "tags": ["tailwind", "css", "styling", "utility-first"],
+        "sha256": "e0a4465784ed639cf451139f11ae795b4847a21ac0dc1688766e0fadba70b28d",
+        "size": 2516,
+        "aliases": [
+          "tailwindcss",
+          "tailwind-css"
+        ],
+        "tags": [
+          "tailwind",
+          "css",
+          "styling",
+          "utility-first"
+        ],
         "category": "styling"
       }
     ],
@@ -104,14 +285,23 @@
         "name": "eslint",
         "version": "1.0.0",
         "description": "ESLint v9 with flat config for code linting",
-        "frameworks": ["*"],
+        "frameworks": [
+          "*"
+        ],
         "frameworkVersion": "ESLint 9",
         "status": "stable",
         "downloadUrl": "https://cdn.slyxup.online/features/eslint.tar.gz",
-        "sha256": "placeholder0000000000000000000000000000000000000000000000000000",
-        "size": 800,
-        "aliases": ["lint", "linter"],
-        "tags": ["eslint", "linting", "code-quality"],
+        "sha256": "be93559d97471b1255c0bff472a862e944851c4397be90408328ecee03afdbe9",
+        "size": 2433,
+        "aliases": [
+          "lint",
+          "linter"
+        ],
+        "tags": [
+          "eslint",
+          "linting",
+          "code-quality"
+        ],
         "category": "tooling"
       }
     ],
@@ -120,14 +310,23 @@
         "name": "prettier",
         "version": "1.0.0",
         "description": "Prettier v3 code formatter for consistent styling",
-        "frameworks": ["*"],
+        "frameworks": [
+          "*"
+        ],
         "frameworkVersion": "Prettier 3",
         "status": "stable",
         "downloadUrl": "https://cdn.slyxup.online/features/prettier.tar.gz",
-        "sha256": "placeholder0000000000000000000000000000000000000000000000000000",
-        "size": 500,
-        "aliases": ["format", "code-format"],
-        "tags": ["prettier", "formatting", "code-quality"],
+        "sha256": "1e897fb7f39f9bb3fa17265bed2cf3dfe261516abfaf5114617414bbfb544d7b",
+        "size": 983,
+        "aliases": [
+          "format",
+          "code-format"
+        ],
+        "tags": [
+          "prettier",
+          "formatting",
+          "code-quality"
+        ],
         "category": "tooling"
       }
     ],
@@ -136,14 +335,23 @@
         "name": "typescript",
         "version": "1.0.0",
         "description": "TypeScript v5 for type safety",
-        "frameworks": ["*"],
+        "frameworks": [
+          "*"
+        ],
         "frameworkVersion": "TypeScript 5",
         "status": "stable",
         "downloadUrl": "https://cdn.slyxup.online/features/typescript.tar.gz",
-        "sha256": "placeholder0000000000000000000000000000000000000000000000000000",
-        "size": 600,
-        "aliases": ["ts", "type-check"],
-        "tags": ["typescript", "types", "type-safety"],
+        "sha256": "9293db89487ab5da8eb546851eb6add9d399871978e34bba61968d186eea7523",
+        "size": 941,
+        "aliases": [
+          "ts",
+          "type-check"
+        ],
+        "tags": [
+          "typescript",
+          "types",
+          "type-safety"
+        ],
         "category": "language"
       }
     ],
@@ -152,14 +360,25 @@
         "name": "vitest",
         "version": "1.0.0",
         "description": "Vitest v2 fast unit testing framework",
-        "frameworks": ["*"],
+        "frameworks": [
+          "*"
+        ],
         "frameworkVersion": "Vitest 2",
         "status": "stable",
         "downloadUrl": "https://cdn.slyxup.online/features/vitest.tar.gz",
-        "sha256": "placeholder0000000000000000000000000000000000000000000000000000",
-        "size": 700,
-        "aliases": ["test", "unit-test", "vite-test"],
-        "tags": ["vitest", "testing", "unit-test", "vite"],
+        "sha256": "29e1e16e7de41067b9fc511a3af715f27296cac23f1afbfc6d0f121cbecfa881",
+        "size": 1594,
+        "aliases": [
+          "test",
+          "unit-test",
+          "vite-test"
+        ],
+        "tags": [
+          "vitest",
+          "testing",
+          "unit-test",
+          "vite"
+        ],
         "category": "testing"
       }
     ],
@@ -168,14 +387,23 @@
         "name": "jest",
         "version": "1.0.0",
         "description": "Jest v29 testing framework with TypeScript support",
-        "frameworks": ["*"],
+        "frameworks": [
+          "*"
+        ],
         "frameworkVersion": "Jest 29",
         "status": "stable",
         "downloadUrl": "https://cdn.slyxup.online/features/jest.tar.gz",
-        "sha256": "placeholder0000000000000000000000000000000000000000000000000000",
-        "size": 800,
-        "aliases": ["test-jest", "unit-test-jest"],
-        "tags": ["jest", "testing", "unit-test"],
+        "sha256": "f4033624185ddc759879de39335e54a71847358bdfb859cc12886f845d8c11cc",
+        "size": 1692,
+        "aliases": [
+          "test-jest",
+          "unit-test-jest"
+        ],
+        "tags": [
+          "jest",
+          "testing",
+          "unit-test"
+        ],
         "category": "testing"
       }
     ],
@@ -184,14 +412,30 @@
         "name": "prisma",
         "version": "1.0.0",
         "description": "Prisma ORM v5 with TypeScript type-safe database access",
-        "frameworks": ["next", "express", "fastify", "node", "nuxt", "*"],
+        "frameworks": [
+          "next",
+          "express",
+          "fastify",
+          "node",
+          "nuxt",
+          "*"
+        ],
         "frameworkVersion": "Prisma 5",
         "status": "stable",
         "downloadUrl": "https://cdn.slyxup.online/features/prisma.tar.gz",
-        "sha256": "placeholder0000000000000000000000000000000000000000000000000000",
-        "size": 900,
-        "aliases": ["orm", "database", "db"],
-        "tags": ["prisma", "orm", "database", "typescript"],
+        "sha256": "996d83af51812e377b4084a2c659a2320631bfc0b58b56dd8094e37f82b90fa1",
+        "size": 1675,
+        "aliases": [
+          "orm",
+          "database",
+          "db"
+        ],
+        "tags": [
+          "prisma",
+          "orm",
+          "database",
+          "typescript"
+        ],
         "category": "database"
       }
     ],
@@ -200,14 +444,28 @@
         "name": "drizzle",
         "version": "1.0.0",
         "description": "Drizzle ORM lightweight TypeScript ORM",
-        "frameworks": ["next", "express", "fastify", "node", "nuxt", "*"],
+        "frameworks": [
+          "next",
+          "express",
+          "fastify",
+          "node",
+          "nuxt",
+          "*"
+        ],
         "frameworkVersion": "Drizzle 0.30",
         "status": "stable",
         "downloadUrl": "https://cdn.slyxup.online/features/drizzle.tar.gz",
-        "sha256": "placeholder0000000000000000000000000000000000000000000000000000",
-        "size": 750,
-        "aliases": ["drizzle-orm"],
-        "tags": ["drizzle", "orm", "database", "typescript"],
+        "sha256": "628553824934c224db1553bbc38688eed8bf67ace083a4b3cb31fe4e85ee598c",
+        "size": 1734,
+        "aliases": [
+          "drizzle-orm"
+        ],
+        "tags": [
+          "drizzle",
+          "orm",
+          "database",
+          "typescript"
+        ],
         "category": "database"
       }
     ],
@@ -216,14 +474,24 @@
         "name": "husky",
         "version": "1.0.0",
         "description": "Husky v9 Git hooks for pre-commit and commit-msg",
-        "frameworks": ["*"],
+        "frameworks": [
+          "*"
+        ],
         "frameworkVersion": "Husky 9",
         "status": "stable",
         "downloadUrl": "https://cdn.slyxup.online/features/husky.tar.gz",
-        "sha256": "placeholder0000000000000000000000000000000000000000000000000000",
-        "size": 450,
-        "aliases": ["git-hooks", "pre-commit"],
-        "tags": ["husky", "git", "hooks", "pre-commit"],
+        "sha256": "4857ee57f58f92cdbee89696f26bb70baea179cd0d37fff63f7bc9a44bdaf1a5",
+        "size": 863,
+        "aliases": [
+          "git-hooks",
+          "pre-commit"
+        ],
+        "tags": [
+          "husky",
+          "git",
+          "hooks",
+          "pre-commit"
+        ],
         "category": "tooling"
       }
     ],
@@ -232,14 +500,22 @@
         "name": "lint-staged",
         "version": "1.0.0",
         "description": "lint-staged v15 run linters on staged git files",
-        "frameworks": ["*"],
+        "frameworks": [
+          "*"
+        ],
         "frameworkVersion": "lint-staged 15",
         "status": "stable",
         "downloadUrl": "https://cdn.slyxup.online/features/lint-staged.tar.gz",
-        "sha256": "placeholder0000000000000000000000000000000000000000000000000000",
-        "size": 400,
-        "aliases": ["staged-lint"],
-        "tags": ["lint-staged", "git", "linting"],
+        "sha256": "efda4d7baed8c382c4da793d4fcdfa08421b050734dc80fb3401393cb0542a66",
+        "size": 989,
+        "aliases": [
+          "staged-lint"
+        ],
+        "tags": [
+          "lint-staged",
+          "git",
+          "linting"
+        ],
         "category": "tooling"
       }
     ],
@@ -248,14 +524,25 @@
         "name": "shadcn",
         "version": "1.0.0",
         "description": "shadcn/ui component library setup with Radix UI",
-        "frameworks": ["react", "next"],
+        "frameworks": [
+          "react",
+          "next"
+        ],
         "frameworkVersion": "shadcn/ui latest",
         "status": "stable",
         "downloadUrl": "https://cdn.slyxup.online/features/shadcn.tar.gz",
-        "sha256": "placeholder0000000000000000000000000000000000000000000000000000",
-        "size": 1200,
-        "aliases": ["shadcn-ui", "radix"],
-        "tags": ["shadcn", "ui", "components", "radix"],
+        "sha256": "d61aeec3182c28ca974b02ca2f23e79b8ca01276fe8d2810b07a693e8dcea2f4",
+        "size": 2158,
+        "aliases": [
+          "shadcn-ui",
+          "radix"
+        ],
+        "tags": [
+          "shadcn",
+          "ui",
+          "components",
+          "radix"
+        ],
         "category": "ui"
       }
     ],
@@ -264,14 +551,24 @@
         "name": "zustand",
         "version": "1.0.0",
         "description": "Zustand v4 lightweight state management",
-        "frameworks": ["react", "next"],
+        "frameworks": [
+          "react",
+          "next"
+        ],
         "frameworkVersion": "Zustand 4",
         "status": "stable",
         "downloadUrl": "https://cdn.slyxup.online/features/zustand.tar.gz",
-        "sha256": "placeholder0000000000000000000000000000000000000000000000000000",
-        "size": 500,
-        "aliases": ["state", "store"],
-        "tags": ["zustand", "state", "react"],
+        "sha256": "82ec5bb1c6428b439b4c63d9184b45cc5dac447df2d31e6cde6408bb65b8ba29",
+        "size": 1177,
+        "aliases": [
+          "state",
+          "store"
+        ],
+        "tags": [
+          "zustand",
+          "state",
+          "react"
+        ],
         "category": "state"
       }
     ],
@@ -280,14 +577,24 @@
         "name": "react-query",
         "version": "1.0.0",
         "description": "TanStack Query v5 for data fetching and caching",
-        "frameworks": ["react", "next"],
+        "frameworks": [
+          "react",
+          "next"
+        ],
         "frameworkVersion": "TanStack Query 5",
         "status": "stable",
         "downloadUrl": "https://cdn.slyxup.online/features/react-query.tar.gz",
-        "sha256": "placeholder0000000000000000000000000000000000000000000000000000",
-        "size": 600,
-        "aliases": ["tanstack-query", "query"],
-        "tags": ["react-query", "data-fetching", "cache"],
+        "sha256": "436edd2a681a42f13056d2c2d3c2fa16a4984001a0f4e3dfa75a1245d5b26ccf",
+        "size": 1401,
+        "aliases": [
+          "tanstack-query",
+          "query"
+        ],
+        "tags": [
+          "react-query",
+          "data-fetching",
+          "cache"
+        ],
         "category": "data"
       }
     ],
@@ -296,14 +603,24 @@
         "name": "zod",
         "version": "1.0.0",
         "description": "Zod v3 TypeScript-first schema validation",
-        "frameworks": ["*"],
+        "frameworks": [
+          "*"
+        ],
         "frameworkVersion": "Zod 3",
         "status": "stable",
         "downloadUrl": "https://cdn.slyxup.online/features/zod.tar.gz",
-        "sha256": "placeholder0000000000000000000000000000000000000000000000000000",
-        "size": 350,
-        "aliases": ["validation", "schema"],
-        "tags": ["zod", "validation", "schema", "typescript"],
+        "sha256": "7282f594cb2b1c2d4db117c5f86641a06fdb1a6e54e3332af2043249ad6cab3a",
+        "size": 1381,
+        "aliases": [
+          "validation",
+          "schema"
+        ],
+        "tags": [
+          "zod",
+          "validation",
+          "schema",
+          "typescript"
+        ],
         "category": "validation"
       }
     ],
@@ -312,14 +629,24 @@
         "name": "axios",
         "version": "1.0.0",
         "description": "Axios v1 HTTP client with interceptors setup",
-        "frameworks": ["*"],
+        "frameworks": [
+          "*"
+        ],
         "frameworkVersion": "Axios 1",
         "status": "stable",
         "downloadUrl": "https://cdn.slyxup.online/features/axios.tar.gz",
-        "sha256": "placeholder0000000000000000000000000000000000000000000000000000",
-        "size": 400,
-        "aliases": ["http", "http-client"],
-        "tags": ["axios", "http", "api", "client"],
+        "sha256": "15a618b62573359450728485519c95d3465a14d58a4c285b0254b91612dbe7f6",
+        "size": 1386,
+        "aliases": [
+          "http",
+          "http-client"
+        ],
+        "tags": [
+          "axios",
+          "http",
+          "api",
+          "client"
+        ],
         "category": "network"
       }
     ],
@@ -328,14 +655,23 @@
         "name": "docker",
         "version": "1.0.0",
         "description": "Docker + Docker Compose setup for containerization",
-        "frameworks": ["*"],
+        "frameworks": [
+          "*"
+        ],
         "frameworkVersion": "Docker",
         "status": "stable",
         "downloadUrl": "https://cdn.slyxup.online/features/docker.tar.gz",
-        "sha256": "placeholder0000000000000000000000000000000000000000000000000000",
-        "size": 550,
-        "aliases": ["container", "containerize"],
-        "tags": ["docker", "container", "devops"],
+        "sha256": "135208fb723370611ed91d70bbd5982fab5c7476c5912c55125209081c29634b",
+        "size": 1682,
+        "aliases": [
+          "container",
+          "containerize"
+        ],
+        "tags": [
+          "docker",
+          "container",
+          "devops"
+        ],
         "category": "devops"
       }
     ],
@@ -344,14 +680,23 @@
         "name": "dotenv",
         "version": "1.0.0",
         "description": "Environment variable management with .env files",
-        "frameworks": ["*"],
+        "frameworks": [
+          "*"
+        ],
         "frameworkVersion": "dotenv 16",
         "status": "stable",
         "downloadUrl": "https://cdn.slyxup.online/features/dotenv.tar.gz",
-        "sha256": "placeholder0000000000000000000000000000000000000000000000000000",
-        "size": 300,
-        "aliases": ["env", "environment"],
-        "tags": ["dotenv", "env", "config"],
+        "sha256": "aaeaf3e019735ac2b7b3473bd9ea2ad33060d6bfcf7ea74b0cbdebed135565a2",
+        "size": 1695,
+        "aliases": [
+          "env",
+          "environment"
+        ],
+        "tags": [
+          "dotenv",
+          "env",
+          "config"
+        ],
         "category": "config"
       }
     ],
@@ -360,14 +705,26 @@
         "name": "github-actions",
         "version": "1.0.0",
         "description": "GitHub Actions CI/CD workflow templates",
-        "frameworks": ["*"],
+        "frameworks": [
+          "*"
+        ],
         "frameworkVersion": "GitHub Actions",
         "status": "stable",
         "downloadUrl": "https://cdn.slyxup.online/features/github-actions.tar.gz",
-        "sha256": "placeholder0000000000000000000000000000000000000000000000000000",
-        "size": 600,
-        "aliases": ["ci", "cd", "ci-cd", "actions"],
-        "tags": ["github", "ci", "cd", "devops"],
+        "sha256": "584b2ce998ed66fa7620c8800cc9dba71ce408b4df862766c08200e06a996d9e",
+        "size": 1181,
+        "aliases": [
+          "ci",
+          "cd",
+          "ci-cd",
+          "actions"
+        ],
+        "tags": [
+          "github",
+          "ci",
+          "cd",
+          "devops"
+        ],
         "category": "devops"
       }
     ],
@@ -376,14 +733,24 @@
         "name": "swr",
         "version": "1.0.0",
         "description": "SWR v2 React Hooks for data fetching",
-        "frameworks": ["react", "next"],
+        "frameworks": [
+          "react",
+          "next"
+        ],
         "frameworkVersion": "SWR 2",
         "status": "stable",
         "downloadUrl": "https://cdn.slyxup.online/features/swr.tar.gz",
-        "sha256": "placeholder0000000000000000000000000000000000000000000000000000",
-        "size": 450,
-        "aliases": ["vercel-swr"],
-        "tags": ["swr", "data-fetching", "react", "hooks"],
+        "sha256": "72cb7005fecbeeeb59af7e262b6b26c9d6b4aace689a20ae51a0f1a6b9de2469",
+        "size": 826,
+        "aliases": [
+          "vercel-swr"
+        ],
+        "tags": [
+          "swr",
+          "data-fetching",
+          "react",
+          "hooks"
+        ],
         "category": "data"
       }
     ],
@@ -392,14 +759,23 @@
         "name": "pinia",
         "version": "1.0.0",
         "description": "Pinia v2 Vue state management",
-        "frameworks": ["vue", "nuxt"],
+        "frameworks": [
+          "vue",
+          "nuxt"
+        ],
         "frameworkVersion": "Pinia 2",
         "status": "stable",
         "downloadUrl": "https://cdn.slyxup.online/features/pinia.tar.gz",
-        "sha256": "placeholder0000000000000000000000000000000000000000000000000000",
-        "size": 500,
-        "aliases": ["vue-store"],
-        "tags": ["pinia", "vue", "state"],
+        "sha256": "926d8270bb4374c6c2adc1f7991cb948845b94b6af0b69a55138dc0bbdcb6c6c",
+        "size": 900,
+        "aliases": [
+          "vue-store"
+        ],
+        "tags": [
+          "pinia",
+          "vue",
+          "state"
+        ],
         "category": "state"
       }
     ],
@@ -408,14 +784,26 @@
         "name": "trpc",
         "version": "1.0.0",
         "description": "tRPC v11 end-to-end typesafe APIs",
-        "frameworks": ["next", "express", "fastify", "node"],
+        "frameworks": [
+          "next",
+          "express",
+          "fastify",
+          "node"
+        ],
         "frameworkVersion": "tRPC 11",
         "status": "stable",
         "downloadUrl": "https://cdn.slyxup.online/features/trpc.tar.gz",
-        "sha256": "placeholder0000000000000000000000000000000000000000000000000000",
-        "size": 700,
-        "aliases": ["typesafe-api"],
-        "tags": ["trpc", "api", "typescript", "rpc"],
+        "sha256": "af004a1ccb10ec8904c4b1aa4e9e124f64f7baed554766a1fd7a9d1a943ff8fa",
+        "size": 887,
+        "aliases": [
+          "typesafe-api"
+        ],
+        "tags": [
+          "trpc",
+          "api",
+          "typescript",
+          "rpc"
+        ],
         "category": "api"
       }
     ],
@@ -424,14 +812,29 @@
         "name": "lucia",
         "version": "1.0.0",
         "description": "Lucia v3 authentication library",
-        "frameworks": ["next", "express", "fastify", "node", "nuxt", "svelte"],
+        "frameworks": [
+          "next",
+          "express",
+          "fastify",
+          "node",
+          "nuxt",
+          "svelte"
+        ],
         "frameworkVersion": "Lucia 3",
         "status": "stable",
         "downloadUrl": "https://cdn.slyxup.online/features/lucia.tar.gz",
-        "sha256": "placeholder0000000000000000000000000000000000000000000000000000",
-        "size": 650,
-        "aliases": ["auth", "authentication"],
-        "tags": ["lucia", "auth", "authentication", "session"],
+        "sha256": "cab7886532313494a669a69a8ade9c56be1d21b5f390bb8d127e1cc60169a7d6",
+        "size": 820,
+        "aliases": [
+          "auth",
+          "authentication"
+        ],
+        "tags": [
+          "lucia",
+          "auth",
+          "authentication",
+          "session"
+        ],
         "category": "auth"
       }
     ],
@@ -440,14 +843,24 @@
         "name": "next-auth",
         "version": "1.0.0",
         "description": "NextAuth.js v5 authentication for Next.js",
-        "frameworks": ["next"],
+        "frameworks": [
+          "next"
+        ],
         "frameworkVersion": "NextAuth 5",
         "status": "stable",
         "downloadUrl": "https://cdn.slyxup.online/features/next-auth.tar.gz",
-        "sha256": "placeholder0000000000000000000000000000000000000000000000000000",
-        "size": 700,
-        "aliases": ["auth-next", "nextauth"],
-        "tags": ["next-auth", "auth", "next", "oauth"],
+        "sha256": "1df88258a7d1b7db40735598afbfada11b83887634d934fd4ef6ffbf70ea5814",
+        "size": 942,
+        "aliases": [
+          "auth-next",
+          "nextauth"
+        ],
+        "tags": [
+          "next-auth",
+          "auth",
+          "next",
+          "oauth"
+        ],
         "category": "auth"
       }
     ],
@@ -456,14 +869,24 @@
         "name": "playwright",
         "version": "1.0.0",
         "description": "Playwright v1 end-to-end testing",
-        "frameworks": ["*"],
+        "frameworks": [
+          "*"
+        ],
         "frameworkVersion": "Playwright 1",
         "status": "stable",
         "downloadUrl": "https://cdn.slyxup.online/features/playwright.tar.gz",
-        "sha256": "placeholder0000000000000000000000000000000000000000000000000000",
-        "size": 900,
-        "aliases": ["e2e", "e2e-test"],
-        "tags": ["playwright", "testing", "e2e", "browser"],
+        "sha256": "bbf5451da127973d2aeae5c65d21d33457e06316bdc92d6b3ae67c913adae445",
+        "size": 833,
+        "aliases": [
+          "e2e",
+          "e2e-test"
+        ],
+        "tags": [
+          "playwright",
+          "testing",
+          "e2e",
+          "browser"
+        ],
         "category": "testing"
       }
     ],
@@ -472,14 +895,22 @@
         "name": "cypress",
         "version": "1.0.0",
         "description": "Cypress v13 end-to-end testing",
-        "frameworks": ["*"],
+        "frameworks": [
+          "*"
+        ],
         "frameworkVersion": "Cypress 13",
         "status": "stable",
         "downloadUrl": "https://cdn.slyxup.online/features/cypress.tar.gz",
-        "sha256": "placeholder0000000000000000000000000000000000000000000000000000",
-        "size": 850,
-        "aliases": ["e2e-cypress"],
-        "tags": ["cypress", "testing", "e2e"],
+        "sha256": "dee7cec1e35a36f7f16f287cc0220e7c8855b522ebdd03cdea62db24250d3134",
+        "size": 861,
+        "aliases": [
+          "e2e-cypress"
+        ],
+        "tags": [
+          "cypress",
+          "testing",
+          "e2e"
+        ],
         "category": "testing"
       }
     ],
@@ -488,14 +919,27 @@
         "name": "storybook",
         "version": "1.0.0",
         "description": "Storybook v8 UI component documentation",
-        "frameworks": ["react", "vue", "svelte", "next"],
+        "frameworks": [
+          "react",
+          "vue",
+          "svelte",
+          "next"
+        ],
         "frameworkVersion": "Storybook 8",
         "status": "stable",
         "downloadUrl": "https://cdn.slyxup.online/features/storybook.tar.gz",
-        "sha256": "placeholder0000000000000000000000000000000000000000000000000000",
-        "size": 1100,
-        "aliases": ["sb", "component-docs"],
-        "tags": ["storybook", "ui", "components", "docs"],
+        "sha256": "19df5f3fb9b6418d250f1b3649294911aa3d3da5102b9c1ab79ab28aa1c3f3cb",
+        "size": 892,
+        "aliases": [
+          "sb",
+          "component-docs"
+        ],
+        "tags": [
+          "storybook",
+          "ui",
+          "components",
+          "docs"
+        ],
         "category": "ui"
       }
     ],
@@ -504,14 +948,26 @@
         "name": "i18n",
         "version": "1.0.0",
         "description": "i18next internationalization setup",
-        "frameworks": ["react", "next", "vue", "nuxt"],
+        "frameworks": [
+          "react",
+          "next",
+          "vue",
+          "nuxt"
+        ],
         "frameworkVersion": "i18next 23",
         "status": "stable",
         "downloadUrl": "https://cdn.slyxup.online/features/i18n.tar.gz",
-        "sha256": "placeholder0000000000000000000000000000000000000000000000000000",
-        "size": 550,
-        "aliases": ["internationalization", "localization"],
-        "tags": ["i18n", "localization", "translation"],
+        "sha256": "06388cb0905f279383eb8c07c7b547d6e499f5ef975437a7e6d63179737e6e63",
+        "size": 864,
+        "aliases": [
+          "internationalization",
+          "localization"
+        ],
+        "tags": [
+          "i18n",
+          "localization",
+          "translation"
+        ],
         "category": "i18n"
       }
     ],
@@ -520,14 +976,27 @@
         "name": "swagger",
         "version": "1.0.0",
         "description": "Swagger/OpenAPI documentation setup",
-        "frameworks": ["express", "fastify", "node", "next"],
+        "frameworks": [
+          "express",
+          "fastify",
+          "node",
+          "next"
+        ],
         "frameworkVersion": "Swagger",
         "status": "stable",
         "downloadUrl": "https://cdn.slyxup.online/features/swagger.tar.gz",
-        "sha256": "placeholder0000000000000000000000000000000000000000000000000000",
-        "size": 600,
-        "aliases": ["openapi", "api-docs"],
-        "tags": ["swagger", "openapi", "api", "docs"],
+        "sha256": "8964f57145d4874a8705e2fbf037a947cdd648409fa83375d373934f1299ed9e",
+        "size": 949,
+        "aliases": [
+          "openapi",
+          "api-docs"
+        ],
+        "tags": [
+          "swagger",
+          "openapi",
+          "api",
+          "docs"
+        ],
         "category": "api"
       }
     ],
@@ -536,14 +1005,26 @@
         "name": "pwa",
         "version": "1.0.0",
         "description": "Progressive Web App with service workers",
-        "frameworks": ["react", "vue", "next", "svelte"],
+        "frameworks": [
+          "react",
+          "vue",
+          "next",
+          "svelte"
+        ],
         "frameworkVersion": "PWA",
         "status": "stable",
         "downloadUrl": "https://cdn.slyxup.online/features/pwa.tar.gz",
-        "sha256": "placeholder0000000000000000000000000000000000000000000000000000",
-        "size": 700,
-        "aliases": ["service-worker", "offline"],
-        "tags": ["pwa", "offline", "service-worker"],
+        "sha256": "32775e6a94bffc2e523ebb1d0983300d02a8844df0ec7d9355944f9b5e91b0c3",
+        "size": 950,
+        "aliases": [
+          "service-worker",
+          "offline"
+        ],
+        "tags": [
+          "pwa",
+          "offline",
+          "service-worker"
+        ],
         "category": "pwa"
       }
     ],
@@ -552,14 +1033,24 @@
         "name": "sentry",
         "version": "1.0.0",
         "description": "Sentry error tracking and monitoring",
-        "frameworks": ["*"],
+        "frameworks": [
+          "*"
+        ],
         "frameworkVersion": "Sentry 8",
         "status": "stable",
         "downloadUrl": "https://cdn.slyxup.online/features/sentry.tar.gz",
-        "sha256": "placeholder0000000000000000000000000000000000000000000000000000",
-        "size": 550,
-        "aliases": ["error-tracking", "monitoring"],
-        "tags": ["sentry", "error", "monitoring", "logging"],
+        "sha256": "10b2623efa982f6ff580d1bb70f5f12340de12263d881da944dcdaa210bec204",
+        "size": 896,
+        "aliases": [
+          "error-tracking",
+          "monitoring"
+        ],
+        "tags": [
+          "sentry",
+          "error",
+          "monitoring",
+          "logging"
+        ],
         "category": "monitoring"
       }
     ]
