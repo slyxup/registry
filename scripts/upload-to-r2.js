@@ -3,18 +3,26 @@
 /**
  * Cloudflare R2 Upload Script
  * 
- * Uploads all packaged templates to Cloudflare R2 bucket
+ * Uploads all packaged templates, features, and stacks to Cloudflare R2 bucket
+ * with proper folder structure:
+ *   - projects/  (project templates like react, vue, next)
+ *   - features/  (add-on features like tailwind, eslint, prisma)
+ *   - stacks/    (pre-configured bundles)
+ * 
+ * Skips files that already exist in R2 (use --force to upload anyway)
+ * 
  * Requires: wrangler CLI installed and authenticated
  * 
  * Usage:
- *   node upload-to-r2.js        # Interactive mode
- *   node upload-to-r2.js local  # Upload to local/dev bucket
- *   node upload-to-r2.js prod    # Upload to production bucket
+ *   node upload-to-r2.js              # Interactive mode (skips existing)
+ *   node upload-to-r2.js prod         # Upload to production bucket (skips existing)
+ *   node upload-to-r2.js prod --force # Force upload all files (overwrite existing)
+ *   node upload-to-r2.js prod --clean # Delete all first, then upload
  */
 
 import { execSync } from 'child_process';
-import { readdirSync, statSync } from 'fs';
-import { join, basename } from 'path';
+import { readdirSync, existsSync } from 'fs';
+import { join } from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 
@@ -22,7 +30,9 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const args = process.argv.slice(2);
-const env = args[0] || 'interactive';
+const env = args.find(a => !a.startsWith('--')) || 'interactive';
+const shouldClean = args.includes('--clean');
+const forceUpload = args.includes('--force');
 
 const ENVIRONMENTS = {
   local: {
@@ -35,7 +45,29 @@ const ENVIRONMENTS = {
   }
 };
 
-const TEMPLATES_DIR = join(__dirname, '..', '..', 'templates');
+const SLYXUP_ROOT = join(__dirname, '..', '..');
+const TEMPLATES_DIR = join(SLYXUP_ROOT, 'templates');
+const PACKAGED_DIR = join(TEMPLATES_DIR, 'packaged');
+
+// Define which packages are projects vs features vs stacks
+const PROJECTS = [
+  'react', 'vue', 'next', 'express', 'discord', 
+  'fastify', 'nestjs', 'graphql', 'hono', 'bun-server'
+];
+
+const FEATURES = [
+  'tailwind', 'eslint', 'prettier', 'typescript', 'vitest', 'jest',
+  'prisma', 'drizzle', 'husky', 'lint-staged', 'shadcn', 'zustand',
+  'react-query', 'zod', 'axios', 'docker', 'dotenv', 'github-actions',
+  'swr', 'pinia', 'trpc', 'lucia', 'next-auth', 'playwright', 'cypress',
+  'storybook', 'i18n', 'swagger', 'pwa', 'sentry'
+];
+
+const STACKS = [
+  'express-postgres', 'next-fullstack', 'react-express-monorepo',
+  'nestjs-postgres', 'next-t3-stack', 'vue-nuxt-fullstack',
+  'react-native-expo', 'fastify-tiny', 'graphql-apollo-fullstack', 'remix-fullstack'
+];
 
 console.log('🚀 SlyxUp R2 Upload Script\n');
 
@@ -63,6 +95,49 @@ async function askEnvironment() {
   });
 }
 
+// Get all existing objects in R2 bucket (single API call)
+function getExistingObjects(bucketName) {
+  console.log('📋 Fetching existing objects from R2...');
+  try {
+    const result = execSync(
+      `wrangler r2 object list ${bucketName} --remote`,
+      { encoding: 'utf-8', stdio: ['pipe', 'pipe', 'pipe'] }
+    );
+    
+    // Parse the output - wrangler returns JSON array
+    const objects = JSON.parse(result);
+    const keys = new Set(objects.map(obj => obj.key));
+    console.log(`   Found ${keys.size} existing objects\n`);
+    return keys;
+  } catch (error) {
+    // If bucket is empty or error, return empty set
+    console.log('   Bucket is empty or error fetching list\n');
+    return new Set();
+  }
+}
+
+async function deleteAllObjects(bucketName) {
+  console.log('🗑️  Deleting all existing objects from R2...\n');
+  
+  const existingKeys = getExistingObjects(bucketName);
+  let deletedCount = 0;
+  
+  for (const key of existingKeys) {
+    try {
+      execSync(
+        `wrangler r2 object delete ${bucketName}/${key} --remote`,
+        { stdio: 'pipe' }
+      );
+      console.log(`   ✓ Deleted: ${key}`);
+      deletedCount++;
+    } catch {
+      // Ignore delete errors
+    }
+  }
+  
+  console.log(`\n   Deleted ${deletedCount} objects\n`);
+}
+
 async function main() {
   let selectedEnv = env;
 
@@ -71,103 +146,164 @@ async function main() {
   }
 
   const config = ENVIRONMENTS[selectedEnv];
+  if (!config) {
+    console.error(`❌ Unknown environment: ${selectedEnv}`);
+    process.exit(1);
+  }
+  
   const BUCKET_NAME = config.bucket;
   const CDN_URL = config.cdnUrl;
 
-  console.log(`\n📍 Target: ${selectedEnv.toUpperCase()}`);
+  console.log(`📍 Target: ${selectedEnv.toUpperCase()}`);
   console.log(`   Bucket: ${BUCKET_NAME}`);
-  console.log(`   CDN: ${CDN_URL}\n`);
+  console.log(`   CDN: ${CDN_URL}`);
+  console.log(`   Force: ${forceUpload ? 'yes' : 'no'}\n`);
 
   // Check if wrangler is installed
-try {
-  execSync('wrangler --version', { stdio: 'ignore' });
-} catch (error) {
-  console.error('❌ Wrangler CLI not found!');
-  console.error('   Install: npm install -g wrangler');
-  console.error('   Login: wrangler login');
-  process.exit(1);
-}
+  try {
+    execSync('wrangler --version', { stdio: 'ignore' });
+  } catch (error) {
+    console.error('❌ Wrangler CLI not found!');
+    console.error('   Install: npm install -g wrangler');
+    console.error('   Login: wrangler login');
+    process.exit(1);
+  }
 
-// Find all .tar.gz files
-function findTemplates(dir) {
-  const templates = [];
+  // Delete existing objects if --clean flag is set
+  if (shouldClean) {
+    await deleteAllObjects(BUCKET_NAME);
+  }
+
+  // Check packaged directory exists
+  if (!existsSync(PACKAGED_DIR)) {
+    console.error(`❌ Packaged directory not found: ${PACKAGED_DIR}`);
+    console.error('   Run: node run.js build');
+    process.exit(1);
+  }
+
+  // Get all .tar.gz files from packaged directory (including stacks/ subdirectory)
+  const allFiles = readdirSync(PACKAGED_DIR)
+    .filter(f => f.endsWith('.tar.gz'))
+    .map(f => ({
+      filename: f,
+      name: f.replace('.tar.gz', ''),
+      path: join(PACKAGED_DIR, f)
+    }));
   
-  function scan(currentDir) {
-    const entries = readdirSync(currentDir);
-    
-    for (const entry of entries) {
-      const fullPath = join(currentDir, entry);
-      const stat = statSync(fullPath);
+  // Also get files from stacks/ subdirectory
+  const stacksDir = join(PACKAGED_DIR, 'stacks');
+  if (existsSync(stacksDir)) {
+    const stackFiles = readdirSync(stacksDir)
+      .filter(f => f.endsWith('.tar.gz'))
+      .map(f => ({
+        filename: f,
+        name: f.replace('.tar.gz', ''),
+        path: join(stacksDir, f)
+      }));
+    allFiles.push(...stackFiles);
+  }
+
+  if (allFiles.length === 0) {
+    console.log('⚠️  No packages found!');
+    console.log('   Run: node run.js build');
+    process.exit(1);
+  }
+
+  // Categorize files - anything not in PROJECTS or FEATURES is a stack
+  const projects = allFiles.filter(f => PROJECTS.includes(f.name));
+  const features = allFiles.filter(f => FEATURES.includes(f.name));
+  const stacks = allFiles.filter(f => STACKS.includes(f.name));
+  const unknown = allFiles.filter(f => 
+    !PROJECTS.includes(f.name) && 
+    !FEATURES.includes(f.name) && 
+    !STACKS.includes(f.name)
+  );
+
+  console.log('📦 Files found in packaged/:\n');
+  console.log(`   Projects: ${projects.length}`);
+  projects.forEach(p => console.log(`      - ${p.filename}`));
+  console.log(`   Features: ${features.length}`);
+  features.forEach(f => console.log(`      - ${f.filename}`));
+  console.log(`   Stacks:   ${stacks.length}`);
+  stacks.forEach(s => console.log(`      - ${s.filename}`));
+  if (unknown.length > 0) {
+    console.log(`   Unknown:  ${unknown.length} (will skip)`);
+    unknown.forEach(u => console.log(`      - ${u.filename}`));
+  }
+
+  // Get existing objects ONCE (fast!)
+  let existingKeys = new Set();
+  if (!forceUpload && !shouldClean) {
+    existingKeys = getExistingObjects(BUCKET_NAME);
+  }
+
+  console.log('🔄 Uploading to R2...\n');
+
+  let successCount = 0;
+  let failCount = 0;
+  let skippedCount = 0;
+
+  // Helper function to upload files
+  const uploadFiles = (files, folder) => {
+    for (const file of files) {
+      const r2Key = `${folder}/${file.filename}`;
       
-      if (stat.isDirectory()) {
-        scan(fullPath);
-      } else if (entry.endsWith('.tar.gz')) {
-        templates.push(fullPath);
+      // Check if already exists (using cached list)
+      if (!forceUpload && existingKeys.has(r2Key)) {
+        console.log(`   ⏭️  ${file.filename} (exists)`);
+        skippedCount++;
+        continue;
+      }
+      
+      try {
+        process.stdout.write(`   📤 ${file.filename}...`);
+        execSync(
+          `wrangler r2 object put ${BUCKET_NAME}/${r2Key} --file="${file.path}" --remote`,
+          { stdio: 'pipe' }
+        );
+        console.log(` ✅`);
+        successCount++;
+      } catch (error) {
+        console.log(` ❌`);
+        failCount++;
       }
     }
+  };
+
+  // Upload all categories
+  if (projects.length > 0) {
+    console.log('📁 Projects:');
+    uploadFiles(projects, 'projects');
+    console.log();
   }
-  
-  scan(dir);
-  return templates;
-}
 
-const templates = findTemplates(TEMPLATES_DIR);
-
-if (templates.length === 0) {
-  console.log('⚠️  No templates found!');
-  console.log('   Make sure to package templates first:');
-  console.log('   cd templates && ./scripts/package-react.sh');
-  process.exit(1);
-}
-
-console.log(`📦 Found ${templates.length} template(s) to upload:\n`);
-
-for (const templatePath of templates) {
-  const filename = basename(templatePath);
-  const r2Key = `templates/${filename}`;
-  
-  console.log(`   ${filename}`);
-}
-
-console.log('\n🔄 Uploading to R2...\n');
-
-let successCount = 0;
-let failCount = 0;
-
-for (const templatePath of templates) {
-  const filename = basename(templatePath);
-  const r2Key = `templates/${filename}`;
-  
-  try {
-    console.log(`📤 Uploading: ${filename}`);
-    
-    execSync(
-      `wrangler r2 object put ${BUCKET_NAME}/${r2Key} --file="${templatePath}" --remote`,
-      { stdio: 'inherit' }
-    );
-    
-    console.log(`   ✅ Success: ${CDN_URL}/${r2Key}\n`);
-    successCount++;
-  } catch (error) {
-    console.error(`   ❌ Failed to upload ${filename}\n`);
-    failCount++;
+  if (features.length > 0) {
+    console.log('📁 Features:');
+    uploadFiles(features, 'features');
+    console.log();
   }
-}
 
-console.log('─────────────────────────────────────────');
-console.log(`✅ Uploaded: ${successCount}`);
-if (failCount > 0) {
-  console.log(`❌ Failed: ${failCount}`);
-}
-console.log('─────────────────────────────────────────\n');
+  if (stacks.length > 0) {
+    console.log('📁 Stacks:');
+    uploadFiles(stacks, 'stacks');
+    console.log();
+  }
 
-  if (successCount > 0) {
-    console.log('🎉 Upload complete!');
-    console.log('\n📝 Next steps:');
-    console.log('   1. Update registry/registry.json with CDN URLs');
-    console.log('   2. Push registry to GitHub');
-    console.log('   3. Cloudflare Pages will auto-deploy');
-    console.log('   4. Test: curl https://registry.slyxup.online/registry.json\n');
+  // Summary
+  console.log('─────────────────────────────────────────');
+  console.log(`✅ Uploaded: ${successCount}`);
+  console.log(`⏭️  Skipped:  ${skippedCount}`);
+  if (failCount > 0) {
+    console.log(`❌ Failed:   ${failCount}`);
+  }
+  console.log('─────────────────────────────────────────\n');
+
+  if (successCount > 0 || skippedCount > 0) {
+    console.log('🎉 Done!\n');
+    console.log('📝 CDN URLs:');
+    console.log(`   ${CDN_URL}/projects/{name}.tar.gz`);
+    console.log(`   ${CDN_URL}/features/{name}.tar.gz`);
+    console.log(`   ${CDN_URL}/stacks/{name}.tar.gz\n`);
   }
 
   process.exit(failCount > 0 ? 1 : 0);

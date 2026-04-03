@@ -1,5 +1,5 @@
 {
-  "version": "2.0.3",
+  "version": "2.1.0",
   "templates": {
     "react": [
       {
@@ -1054,5 +1054,278 @@
         "category": "monitoring"
       }
     ]
+  },
+  "stacks": {
+    "express-postgres": {
+      "name": "Express + PostgreSQL",
+      "description": "Backend API with Express, PostgreSQL database, and Prisma ORM",
+      "framework": "express",
+      "version": "1.0.0",
+      "status": "stable",
+      "features": [
+        "express",
+        "prisma",
+        "typescript",
+        "eslint",
+        "prettier",
+        "docker",
+        "dotenv"
+      ],
+      "downloadUrl": "https://cdn.slyxup.online/stacks/express-postgres.tar.gz",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "size": 5000,
+      "tags": [
+        "express",
+        "postgresql",
+        "prisma",
+        "api",
+        "backend",
+        "monorepo"
+      ]
+    },
+    "next-fullstack": {
+      "name": "Next.js Fullstack",
+      "description": "Next.js 14 with TypeScript, Prisma, PostgreSQL, and authentication",
+      "framework": "next",
+      "version": "1.0.0",
+      "status": "stable",
+      "features": [
+        "next",
+        "prisma",
+        "typescript",
+        "eslint",
+        "prettier",
+        "next-auth",
+        "tailwind",
+        "docker"
+      ],
+      "downloadUrl": "https://cdn.slyxup.online/stacks/next-fullstack.tar.gz",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "size": 6000,
+      "tags": [
+        "next",
+        "postgresql",
+        "prisma",
+        "auth",
+        "fullstack",
+        "monorepo"
+      ]
+    },
+    "react-express-monorepo": {
+      "name": "React + Express Monorepo",
+      "description": "Full-stack monorepo with React frontend and Express API",
+      "framework": "react",
+      "version": "1.0.0",
+      "status": "stable",
+      "features": [
+        "react",
+        "express",
+        "typescript",
+        "eslint",
+        "prettier",
+        "tailwind",
+        "docker",
+        "husky"
+      ],
+      "downloadUrl": "https://cdn.slyxup.online/stacks/react-express-monorepo.tar.gz",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "size": 7000,
+      "tags": [
+        "react",
+        "express",
+        "monorepo",
+        "fullstack",
+        "turbo",
+        "vite"
+      ]
+    },
+    "nestjs-postgres": {
+      "name": "NestJS + PostgreSQL",
+      "description": "Enterprise NestJS backend with PostgreSQL, TypeORM and microservices",
+      "framework": "nestjs",
+      "version": "1.0.0",
+      "status": "stable",
+      "features": [
+        "nestjs",
+        "prisma",
+        "typescript",
+        "eslint",
+        "prettier",
+        "docker",
+        "swagger",
+        "husky"
+      ],
+      "downloadUrl": "https://cdn.slyxup.online/stacks/nestjs-postgres.tar.gz",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "size": 5500,
+      "tags": [
+        "nestjs",
+        "postgresql",
+        "prisma",
+        "api",
+        "enterprise",
+        "microservices"
+      ]
+    },
+    "next-t3-stack": {
+      "name": "T3 Stack",
+      "description": "Next.js with tRPC, Prisma, Tailwind CSS, and NextAuth",
+      "framework": "next",
+      "version": "1.0.0",
+      "status": "stable",
+      "features": [
+        "next",
+        "trpc",
+        "prisma",
+        "tailwind",
+        "typescript",
+        "next-auth",
+        "eslint",
+        "prettier",
+        "zod"
+      ],
+      "downloadUrl": "https://cdn.slyxup.online/stacks/next-t3-stack.tar.gz",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "size": 6500,
+      "tags": [
+        "next",
+        "trpc",
+        "prisma",
+        "tailwind",
+        "next-auth",
+        "t3",
+        "fullstack"
+      ]
+    },
+    "vue-nuxt-fullstack": {
+      "name": "Nuxt 3 Fullstack",
+      "description": "Nuxt 3 with TypeScript, Prisma, and server routes",
+      "framework": "nuxt",
+      "version": "1.0.0",
+      "status": "stable",
+      "features": [
+        "nuxt",
+        "prisma",
+        "typescript",
+        "eslint",
+        "prettier",
+        "tailwind",
+        "docker",
+        "pinia"
+      ],
+      "downloadUrl": "https://cdn.slyxup.online/stacks/vue-nuxt-fullstack.tar.gz",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "size": 5500,
+      "tags": [
+        "nuxt",
+        "vue",
+        "prisma",
+        "fullstack",
+        "ssr"
+      ]
+    },
+    "react-native-expo": {
+      "name": "React Native + Expo",
+      "description": "React Native mobile app with Expo and TypeScript",
+      "framework": "react-native",
+      "version": "1.0.0",
+      "status": "stable",
+      "features": [
+        "react-native",
+        "expo",
+        "typescript",
+        "eslint",
+        "prettier",
+        "axios",
+        "zustand"
+      ],
+      "downloadUrl": "https://cdn.slyxup.online/stacks/react-native-expo.tar.gz",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "size": 4500,
+      "tags": [
+        "react-native",
+        "expo",
+        "mobile",
+        "ios",
+        "android"
+      ]
+    },
+    "fastify-tiny": {
+      "name": "Fastify Minimal",
+      "description": "Lightweight Fastify API with TypeScript and minimal dependencies",
+      "framework": "fastify",
+      "version": "1.0.0",
+      "status": "stable",
+      "features": [
+        "fastify",
+        "typescript",
+        "eslint",
+        "prettier",
+        "vitest",
+        "docker"
+      ],
+      "downloadUrl": "https://cdn.slyxup.online/stacks/fastify-tiny.tar.gz",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "size": 3000,
+      "tags": [
+        "fastify",
+        "api",
+        "minimal",
+        "fast"
+      ]
+    },
+    "graphql-apollo-fullstack": {
+      "name": "GraphQL Fullstack",
+      "description": "GraphQL API with Apollo Server, Prisma, and React frontend",
+      "framework": "graphql",
+      "version": "1.0.0",
+      "status": "stable",
+      "features": [
+        "graphql",
+        "prisma",
+        "typescript",
+        "react",
+        "eslint",
+        "prettier",
+        "docker",
+        "apollo"
+      ],
+      "downloadUrl": "https://cdn.slyxup.online/stacks/graphql-apollo-fullstack.tar.gz",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "size": 6000,
+      "tags": [
+        "graphql",
+        "apollo",
+        "prisma",
+        "fullstack",
+        "api"
+      ]
+    },
+    "remix-fullstack": {
+      "name": "Remix Fullstack",
+      "description": "Remix framework with Prisma, PostgreSQL and Tailwind CSS",
+      "framework": "remix",
+      "version": "1.0.0",
+      "status": "beta",
+      "features": [
+        "remix",
+        "prisma",
+        "typescript",
+        "eslint",
+        "prettier",
+        "tailwind",
+        "docker"
+      ],
+      "downloadUrl": "https://cdn.slyxup.online/stacks/remix-fullstack.tar.gz",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "size": 5500,
+      "tags": [
+        "remix",
+        "prisma",
+        "fullstack",
+        "ssr",
+        "progressive"
+      ]
+    }
   }
 }
