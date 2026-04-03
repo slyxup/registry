@@ -9,7 +9,7 @@
         "framework": "react",
         "frameworkVersion": "React 18",
         "status": "stable",
-        "downloadUrl": "https://cdn.slyxup.online/templates/react.tar.gz",
+        "downloadUrl": "https://cdn.slyxup.online/projects/react.tar.gz",
         "sha256": "1359a736bde7d1381ab218d07d5d5bf410955a0c35d931f492f3322497870366",
         "size": 3748,
         "aliases": [
@@ -34,7 +34,7 @@
         "framework": "vue",
         "frameworkVersion": "Vue 3",
         "status": "stable",
-        "downloadUrl": "https://cdn.slyxup.online/templates/vue.tar.gz",
+        "downloadUrl": "https://cdn.slyxup.online/projects/vue.tar.gz",
         "sha256": "b4ae4e73bf66d9958e04ac584bdc87a8462348fa94efbf9e7ebf672289d31886",
         "size": 1780,
         "aliases": [
@@ -58,7 +58,7 @@
         "framework": "next",
         "frameworkVersion": "Next.js 14",
         "status": "stable",
-        "downloadUrl": "https://cdn.slyxup.online/templates/next.tar.gz",
+        "downloadUrl": "https://cdn.slyxup.online/projects/next.tar.gz",
         "sha256": "893617cfc50e5abbb73ff59ffa9369ff0b63fdd53abf7776782f8f69c77d0a90",
         "size": 1468,
         "aliases": [
@@ -82,7 +82,7 @@
         "framework": "express",
         "frameworkVersion": "Express 4",
         "status": "stable",
-        "downloadUrl": "https://cdn.slyxup.online/templates/express.tar.gz",
+        "downloadUrl": "https://cdn.slyxup.online/projects/express.tar.gz",
         "sha256": "20f838a4698559072a8054ef427e9c5a01b9f2e4bad514e6817f0b7c84cb58e7",
         "size": 1203,
         "aliases": [
@@ -106,7 +106,7 @@
         "framework": "discord",
         "frameworkVersion": "Discord.js 14",
         "status": "stable",
-        "downloadUrl": "https://cdn.slyxup.online/templates/discord.tar.gz",
+        "downloadUrl": "https://cdn.slyxup.online/projects/discord.tar.gz",
         "sha256": "0656c07006c9983a041362c9f8a9f292bcf475ba2fc1a59328bad675fcc38f50",
         "size": 1307,
         "aliases": [
@@ -141,7 +141,7 @@
         "category": "backend",
         "version": "1.0.0",
         "status": "stable",
-        "downloadUrl": "https://cdn.slyxup.online/templates/fastify.tar.gz",
+        "downloadUrl": "https://cdn.slyxup.online/projects/fastify.tar.gz",
         "sha256": "596166e98ad019cae7197b4a65a8e126c743e8ab4895ee68c373d4118dbfe849",
         "size": 1567
       }
@@ -166,7 +166,7 @@
         "category": "backend",
         "version": "1.0.0",
         "status": "stable",
-        "downloadUrl": "https://cdn.slyxup.online/templates/nestjs.tar.gz",
+        "downloadUrl": "https://cdn.slyxup.online/projects/nestjs.tar.gz",
         "sha256": "8247eaea35574f045a757f4ade3ef81fb9c1864eeb77eb51f62e94ec646b7b2e",
         "size": 1934
       }
@@ -191,7 +191,7 @@
         "category": "backend",
         "version": "1.0.0",
         "status": "stable",
-        "downloadUrl": "https://cdn.slyxup.online/templates/graphql.tar.gz",
+        "downloadUrl": "https://cdn.slyxup.online/projects/graphql.tar.gz",
         "sha256": "fe3e09a94abcd23059292ec185c479304614616e0253e00acec11680aefd745f",
         "size": 1748
       }
@@ -216,7 +216,7 @@
         "category": "backend",
         "version": "1.0.0",
         "status": "stable",
-        "downloadUrl": "https://cdn.slyxup.online/templates/hono.tar.gz",
+        "downloadUrl": "https://cdn.slyxup.online/projects/hono.tar.gz",
         "sha256": "1a0e152f237235c8abee05c95eb004ca671ad261896c1f7ce9e1e5a98108f780",
         "size": 1379
       }
@@ -241,7 +241,7 @@
         "category": "backend",
         "version": "1.0.0",
         "status": "stable",
-        "downloadUrl": "https://cdn.slyxup.online/templates/bun-server.tar.gz",
+        "downloadUrl": "https://cdn.slyxup.online/projects/bun-server.tar.gz",
         "sha256": "728f7c8ef8e8803ee86120e35bc98ca303a1ca71c07acb27e0c8e644f73ed435",
         "size": 1289
       }
